@@ -9,6 +9,7 @@ const UserController = require('./controllers/UserController');
 const ProjectController = require('./controllers/ProjectController');
 const FeatureController = require('./controllers/FeatureController');
 const Projects = require('./models/ProjectModel');
+const Messages = require('./models/MessageModel');
 
 const app = express();
 
@@ -58,7 +59,11 @@ app.post('/addFeature', FeatureController.create);
 app.get('/features', FeatureController.getFeatures)
 
 app.get('/messages', function(req, res) {
-  console.log('getting current messages...')
+  console.log('getting current messages...');
+  Messages.findAll().then(function(messages) {
+    res.send(messages);
+  })
+
 });
 
 app.listen(port, () => {

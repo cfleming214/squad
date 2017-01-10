@@ -1,13 +1,14 @@
 const Sequelize = require('sequelize');
 const sequelize = require('./../database');
+const Projects = require('./ProjectModel');
 
 const Messages = sequelize.define('messages', {
   author: {
-    type: Sequelize.String(1000),
+    type: Sequelize.STRING(1000),
     field: 'message_author',
   },
   message: {
-    type: Sequelize.String(1000),
+    type: Sequelize.STRING(1000),
     field: 'message_message',
   },
 }, {

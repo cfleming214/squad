@@ -178,6 +178,7 @@ class App extends Component {
             passwordChange = {this.passwordChange}
             message = {this.state.message}
             />
+            <Chat username={this.state.username} />
         </div>
       )
     };
@@ -206,7 +207,6 @@ class App extends Component {
           allProjects={this.state.allProjects}
           setActiveProject={this.setActiveProject}
         />
-        <Chat username={this.state.username} />
       </div>
       )
     }
